@@ -1,11 +1,13 @@
 var video = document.querySelector("#videoElement");
 
+video.setAttribute('autoplay', '');
+video.setAttribute('muted', '');
+video.setAttribute('playsinline', '');
+
 if (navigator.mediaDevices.getUserMedia) {
   navigator.mediaDevices.getUserMedia({
     audio: false,
-    video: {
-      facingMode: 'environment'
-    }
+    video: true
   })
     .then(function (stream) {
       video.srcObject = stream;
