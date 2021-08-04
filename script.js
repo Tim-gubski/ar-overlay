@@ -15,6 +15,7 @@ if (navigator.mediaDevices.getUserMedia) {
     });
 }
 
+
 function stop(e) {
   var stream = video.srcObject;
   var tracks = stream.getTracks();
