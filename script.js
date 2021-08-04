@@ -7,7 +7,9 @@ video.setAttribute('playsinline', '');
 if (navigator.mediaDevices.getUserMedia) {
   navigator.mediaDevices.getUserMedia({
     audio: false,
-    video: true
+    video: {
+        facingMode: 'environment'
+      }
   })
     .then(function (stream) {
       video.srcObject = stream;
