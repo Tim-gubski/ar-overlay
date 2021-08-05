@@ -35,4 +35,11 @@ body{
 
 img{
     width: 200px;
+    transition: 0.5s;
+}
+
+button{
+    font-size: 60px;
+    height: 100px;
+    width: 100px;
 }

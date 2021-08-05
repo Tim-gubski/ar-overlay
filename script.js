@@ -59,7 +59,7 @@ function move(e){
   var touch = e.targetTouches[0];
 
   var newX = touch.pageX;
-  var newY = touch.pageY-50;
+  var newY = touch.pageY-$("#overlay").height()/2;
 
   picture.style.left = newX + "px";
   picture.style.top = newY + "px";
@@ -70,11 +70,28 @@ function initialClick(e) {
 
   image = this;
   document.addEventListener("touchmove", move);
-  document.querySelector("body").style.setProperty("background-color","red")
-  console.log("touched")
 }
 
 function stopClick(e) {
   document.removeEventListener("touchmove", move);
-  document.querySelector("body").style.setProperty("background-color","white")
 }
+
+
+//button presses. Size adjustments
+
+var size = $("#overlay").width()
+
+$("#plus").click(function(){
+  if(size<$("#videoElement").width()-50){
+    size+=50
+  }
+  $("#overlay").width(size)
+})
+
+$("#minus").click(function(){
+  if(size>50){
+    size-=50
+  }
+
+  $("#overlay").width(size)
+})
