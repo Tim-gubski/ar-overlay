@@ -58,8 +58,8 @@ function move(e){
 
   var touch = e.targetTouches[0];
 
-  var newX = touch.pageX - 615;
-  var newY = touch.pageY - 235;
+  var newX = touch.pageX;
+  var newY = touch.pageY;
 
   picture.style.left = newX + "px";
   picture.style.top = newY + "px";
