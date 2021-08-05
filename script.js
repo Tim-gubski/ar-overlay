@@ -1,3 +1,10 @@
+//stop scrolling
+
+// document.body.addEventListener('touchmove', function(event) {
+//   event.preventDefault();
+// }, false); 
+
+
 var video = document.querySelector("#videoElement");
 
 
@@ -40,30 +47,32 @@ function stop(e) {
 
 //Picture movement Code
 
-var picture = document.querySelector(".overlay-container")
+var picture = document.querySelector(".overlay-image")
 
-picture.addEventListener("mousedown", initialClick, false);
-picture.addEventListener("mouseup", stopClick, false);
+picture.addEventListener("touchstart", initialClick);
+picture.addEventListener("touchend", stopClick);
 
 var moving = false;
 
 function move(e){
 
-  var newX = e.clientX - 10;
-  var newY = e.clientY - 10;
+  var touch = e.targetTouches[0];
 
-  image.style.left = newX + "px";
-  image.style.top = newY + "px";
+  var newX = touch.pageX - 615;
+  var newY = touch.pageY - 235;
 
-  
+  picture.style.left = newX + "px";
+  picture.style.top = newY + "px";
+
 }
 
 function initialClick(e) {
 
   image = this;
-  document.addEventListener("mousemove", move, false);
+  document.addEventListener("touchmove", move);
+  console.log("touched")
 }
 
 function stopClick(e) {
-  document.removeEventListener("mousemove", move);
+  document.removeEventListener("touchmove", move);
 }
