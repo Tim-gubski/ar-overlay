@@ -13,6 +13,7 @@ body{
     position: absolute;
     left: 50%;
     top: 30%;
+    padding: 10px;
 }
 
 .overlay-image{
@@ -20,6 +21,16 @@ body{
     left:-50%;
 
 }
+
+#overlay{
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
 
 img{
     width: 200px;

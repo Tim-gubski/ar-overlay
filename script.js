@@ -1,5 +1,8 @@
 var video = document.querySelector("#videoElement");
 
+
+//Video Code
+
 video.setAttribute('autoplay', '');
 video.setAttribute('muted', '');
 video.setAttribute('playsinline', '');
@@ -30,4 +33,37 @@ function stop(e) {
   }
 
   video.srcObject = null;
+}
+
+
+
+
+//Picture movement Code
+
+var picture = document.querySelector(".overlay-container")
+
+picture.addEventListener("mousedown", initialClick, false);
+picture.addEventListener("mouseup", stopClick, false);
+
+var moving = false;
+
+function move(e){
+
+  var newX = e.clientX - 10;
+  var newY = e.clientY - 10;
+
+  image.style.left = newX + "px";
+  image.style.top = newY + "px";
+
+  
+}
+
+function initialClick(e) {
+
+  image = this;
+  document.addEventListener("mousemove", move, false);
+}
+
+function stopClick(e) {
+  document.removeEventListener("mousemove", move);
 }
