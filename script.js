@@ -70,9 +70,11 @@ function initialClick(e) {
 
   image = this;
   document.addEventListener("touchmove", move);
+  document.querySelector("body").style.setProperty("background-color","red")
   console.log("touched")
 }
 
 function stopClick(e) {
   document.removeEventListener("touchmove", move);
+  document.querySelector("body").style.setProperty("background-color","white")
 }
