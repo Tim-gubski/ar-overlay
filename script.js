@@ -47,7 +47,7 @@ function stop(e) {
 
 //Picture movement Code
 
-var picture = document.querySelector(".overlay-image")
+var picture = document.querySelector(".overlay-container")
 
 picture.addEventListener("touchstart", initialClick);
 picture.addEventListener("touchend", stopClick);
@@ -59,7 +59,7 @@ function move(e){
   var touch = e.targetTouches[0];
 
   var newX = touch.pageX;
-  var newY = touch.pageY;
+  var newY = touch.pageY-50;
 
   picture.style.left = newX + "px";
   picture.style.top = newY + "px";
